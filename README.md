@@ -1,13 +1,13 @@
-# Sample Hardhat Project
+# Hardhat NFT Marketplace
+Works with NFT-Marketplace-react
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
+This project deploys a voting contract (mainnet network - https://docs.bnbchain.org/docs/hardhat-new/)
 
-Try running some of the following tasks:
+Tasks:
 
 ```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat ignition deploy ./ignition/modules/Lock.ts
+npx hardhat compile
+```
+```shell
+npx hardhat run --network testnet scripts/deploy.js
 ```
