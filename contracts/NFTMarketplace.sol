@@ -16,7 +16,9 @@ contract NFTMarketplace is ERC721 {
 
     address owner;
 
-    constructor() ERC721("ZhendyNFT", "ZNFT") {}
+    constructor() ERC721("ZhendyNFT", "ZNFT") {
+        owner = msg.sender;
+    }
 
     modifier onlyOwner {
         require(msg.sender == owner);
