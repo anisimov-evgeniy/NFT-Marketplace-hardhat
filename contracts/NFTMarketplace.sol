@@ -4,6 +4,7 @@ pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 contract NFTMarketplace is ERC721 {
+    address owner;
     uint256 private _tokenIdCounter;
 
     struct Sale {
@@ -14,14 +15,12 @@ contract NFTMarketplace is ERC721 {
     mapping(uint256 => Sale) public tokenSales;
     uint256[] public tokensForSale;
 
-    address owner;
-
     constructor() ERC721("ZhendyNFT", "ZNFT") {
         owner = msg.sender;
     }
 
     modifier onlyOwner {
-        require(msg.sender == owner);
+        require(msg.sender == owner, "Caller is not the owner");
         _;
     }
 
